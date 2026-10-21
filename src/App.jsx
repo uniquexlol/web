@@ -5,8 +5,7 @@ const initialPosts=[{id:1,name:'MossyMochi',avatar:'🌿',tag:'Garden friend',ti
 const events=[['24','OCT','Friday Cozy Hangout','8:00 PM · Community voice','sage'],['26','OCT','Meadow Market','All day · Share your creations','peach'],['31','OCT','Moonlit Meadow Night','7:30 PM · Seasonal event','lilac']];
 const items=[{id:'seed',emoji:'🌱',name:'Little Seed',desc:'A fresh start for your garden.',price:10},{id:'tulip',emoji:'🌷',name:'Pink Tulip',desc:'A cheerful pop of color.',price:25},{id:'mushroom',emoji:'🍄',name:'Forest Mushroom',desc:'A tiny woodland treasure.',price:40}];
 function saved(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}
-export default function App(){
- const[page,setPage]=useState('Home'),[menu,setMenu]=useState(false),[lang,setLang]=useState('EN'),[notice,setNotice]=useState('');
+export default function App(){const[page,setPage]=useState('Home'),[menu,setMenu]=useState(false),[lang,setLang]=useState('EN'),[notice,setNotice]=useState('');
  const[posts,setPosts]=useState(()=>saved('mh-posts',initialPosts)),[likes,setLikes]=useState(()=>saved('mh-likes',[])),[draft,setDraft]=useState(''),[search,setSearch]=useState('');
  const[coins,setCoins]=useState(()=>saved('mh-coins',80)),[bag,setBag]=useState(()=>saved('mh-bag',[{...items[0],count:2}])),[sprouts,setSprouts]=useState(()=>saved('mh-sprouts',3)),[watered,setWatered]=useState(()=>saved('mh-watered',false));
  const[form,setForm]=useState({type:'Suggestion',title:'',message:''}),[rsvps,setRsvps]=useState([]);
